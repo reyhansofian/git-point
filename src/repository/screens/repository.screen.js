@@ -400,7 +400,11 @@ class Repository extends Component {
                   )
             }
             showButton={pulls.length > 0}
-            buttonTitle="View All"
+            buttonTitle={
+              pureIssues.length > 0
+                ? translate('repository.main.viewAllButton', language)
+                : translate('repository.main.newIssueButton', language)
+            }
             buttonAction={() =>
               navigation.navigate('PullList', {
                 title: translate('repository.pullList.title', language),
